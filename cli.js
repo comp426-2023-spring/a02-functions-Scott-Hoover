@@ -23,7 +23,10 @@ if(args.h){
 
 const timezone = moment.tz.guess();
 const days = args.d
-
+var currday = 1;
+if ('d' in args){
+    day = args.d;
+}
 var latitude = args.n || args.s * -1;
 var longitude = args.e || args.w * -1;
 
@@ -37,15 +40,18 @@ if (args.j){
 }
 
 
+const rainy = response.daily.precipitation_hours[currday]
 
 
-
-if (days > 1){
-    console.log('in '+day+' days.)
-} else if (days == 1){
-    console.log('tomorrow.\n')
+if (currday == 1){
+    console.log("tomorrow.")
+} else if (currday == 0){
+    console.log("today.")
 } else {
-    console.log('today.\n')
+    console.log("in " + days + " days.")
 }
+
+
+
 
 process.exit(0);
