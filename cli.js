@@ -21,11 +21,11 @@ if(args.h){
     process.exit(0)
 }
 
-const timezone = moment.tz.guess();
-const days = args.d
+const timezone = args.z || moment.tz.guess();
+
 var currday = 1;
 if ('d' in args){
-    day = args.d;
+    currday = args.d;
 }
 var latitude = args.n || args.s * -1;
 var longitude = args.e || args.w * -1;
@@ -48,7 +48,7 @@ if (currday == 1){
 } else if (currday == 0){
     console.log("today.")
 } else {
-    console.log("in " + days + " days.")
+    console.log("in " + currdays + " days.")
 }
 
 
