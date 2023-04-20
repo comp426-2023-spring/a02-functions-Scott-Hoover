@@ -18,10 +18,10 @@ if(args.h){
     -j            Echo pretty JSON from open-meteo API and exit.`
   
     process.stdout.write(help_)
-    process.exit()
+    process.exit(0)
 }
 
-const timezone = args.z || moment.tz.guess();
+const timezone = moment.tz.guess();
 const days = args.d
 
 var latitude = args.n || args.s * -1;
@@ -35,19 +35,17 @@ if (args.j){
     console.log(data);
     process.exit(0);
 }
-var day;
-if (args.d == null){
-    day = 1;
+
+
+
+
+
+if (days > 1){
+    console.log('in '+day+' days.)
+} else if (days == 1){
+    console.log('tomorrow.\n')
 } else {
-    day = args.d
-}
-let curr = ""
-if (day > 1){
-    curr = 'in '+day+' days.\n'
-} else if (day == 1){
-    curr = 'tomorrow.\n'
-} else {
-    curr = 'today.\n'
+    console.log('today.\n')
 }
 
 process.exit(0);
