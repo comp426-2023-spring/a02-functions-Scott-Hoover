@@ -40,7 +40,7 @@ if (args.j){
 }
 
 
-const rainy = response.daily.precipitation_hours[currday]
+
 
 
 if (currday == 1){
