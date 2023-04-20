@@ -2,12 +2,16 @@
   "name": "a02-functions-scott-hoover",
   "version": "1.0.0",
   "description": "This assignment will help you learn to create an installable Node.js command line utility.",
-  "main": "index.js",
+  "main": "cli.js",
   "scripts": {
     "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
   },
   "bin": {
     "galosh.js": "./cli.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": git+https://github.com/comp426-2023-spring/a02-functions-Scott-Hoover.git"
   },
   "type": "module",
   "author": "Scott-Hoover",
@@ -16,5 +20,11 @@
     "minimist": "^1.2.8",
     "moment-timezone": "^0.5.43",
     "node-fetch": "^3.3.1"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "bugs": {
+    "url": "https://github.com/comp426-2023-spring/a02-functions-Scott-Hoover/issues"
   }
 }
